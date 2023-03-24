@@ -1,0 +1,70 @@
+{
+  "Music-db": 
+    {
+       "music": [
+    {
+      "id": 1,
+      "name": "legend never die",
+      "img": "https://i.ytimg.com/vi/4Q46xYqUwZQ/maxresdefault.jpgtypicode",
+      "artist": "legend"
+    },
+    {
+      "name": "Dusk till dawn",
+      "img": "https://i.ytimg.com/vi/tt2k8PGm-TI/maxresdefault.jpg",
+      "artist": "Zayn",
+      "id": 2
+    },
+    {
+      "name": "Dusk till dawn",
+      "img": "https://i.ytimg.com/vi/tt2k8PGm-TI/maxresdefault.jpg",
+      "artist": "Zayn",
+      "id": 3
+    },
+    {
+      "name": "Dusk till dawn",
+      "img": "https://i.ytimg.com/vi/tt2k8PGm-TI/maxresdefault.jpg",
+      "artist": "Zayn",
+      "id": 5
+    },
+    {
+      "name": "Dusk till dawn",
+      "img": "https://i.ytimg.com/vi/tt2k8PGm-TI/maxresdefault.jpg",
+      "artist": "Zayn",
+      "id": 7
+    }
+  ],
+  "More": [
+    {
+      "id": 1,
+      "name": "legend never die",
+      "img": "https://i.ytimg.com/vi/4Q46xYqUwZQ/maxresdefault.jpgtypicode",
+      "artist": "legend"
+    },
+    {
+      "name": "Dusk till dawn",
+      "img": "https://i.ytimg.com/vi/tt2k8PGm-TI/maxresdefault.jpg",
+      "artist": "Zayn",
+      "id": 2
+    },
+    {
+      "name": "Dusk till dawn",
+      "img": "https://i.ytimg.com/vi/tt2k8PGm-TI/maxresdefault.jpg",
+      "artist": "Zayn",
+      "id": 3
+    },
+    {
+      "name": "Dusk till dawn",
+      "img": "https://i.ytimg.com/vi/tt2k8PGm-TI/maxresdefault.jpg",
+      "artist": "Zayn",
+      "id": 5
+    },
+    {
+      "name": "Dusk till dawn",
+      "img": "https://i.ytimg.com/vi/tt2k8PGm-TI/maxresdefault.jpg",
+      "artist": "Zayn",
+      "id": 7
+    }
+  ]
+    }
+  
+}

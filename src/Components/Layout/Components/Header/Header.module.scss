@@ -1,0 +1,110 @@
+.wrapper{
+    display: flex;
+    position: fixed;
+    border-bottom: 1px solid #222227; 
+    height: 70px ;
+    align-items: center;
+    padding: 0 50px;
+    width: 100%;
+    background-color: var(--background-theme);
+    color: var(--text-color);
+    font-size: 1rem;
+    z-index: 1000;
+}
+.logo {
+    display: flex;
+    width: 16.2%;
+    height: 100%;
+    align-items: center;
+    img{
+        width: 120px;
+    }
+}
+.header-nav {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    ul{
+        display: flex;
+        padding-top: 10px;
+        li{
+            list-style: none;
+            margin: 1.2rem;
+            cursor: pointer;
+           &:hover{
+            color: var(--primary);
+           }
+        }
+    }
+}
+.search {
+    position: relative;
+    display: flex;
+    height: 46px;
+    width: 361px;
+    background-color:#222227;
+    border-radius: 12px;
+    border: 1.5px solid transparent;
+    input{
+        flex: 1;
+        padding: 20px;
+        height: 100%;
+        border: none;
+        background-color: transparent;
+        border-radius: 12px;
+        color: #aaaabb;
+        &:focus {
+            outline: none;
+        }
+    }
+    
+}
+.search-btn{
+        border: none;
+        width: 52px;
+        height: 100%;
+        border-bottom-right-radius: 12px;
+        border-top-right-radius: 12px;
+        background-color:#222227;
+        color: #aaaabb;
+        &:hover{
+            cursor: pointer;
+            color:var(--primary) ;
+        }
+}
+.action {
+    display: flex;
+    gap: 10px;
+    height: 100%;
+    width: 100px;
+    position: absolute;
+    margin-right: 100px;
+    right: 0;
+    align-items: center;
+    cursor: pointer;
+    &:hover span{
+        color: #aaaabb;
+    }
+    &:hover .btn-siginin{
+        color: var(--primary);
+    }
+}
+.clear, .loading{
+    display: flex;
+    position: absolute;
+    color: white;
+    font-size: 0.9rem;
+    background-color:transparent;
+    color: #aaaabb;
+    border: none;
+    right: 15%;
+    top: 35%;
+}
+.search-result{
+    width: calc(306px + 52px);
+}
+.search-title {
+    padding-top: 10px;
+    padding-left: 20px;
+
+}

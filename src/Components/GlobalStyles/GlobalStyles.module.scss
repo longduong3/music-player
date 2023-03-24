@@ -1,0 +1,21 @@
+@import 'normalize.css';
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;400;600&family=Kanit:wght@100;300;600&display=swap');
+
+:root {
+    --primary: rgb(65, 190, 65);
+    --background-theme: #16151a;
+    --text-color: rgb(195, 197, 200);
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html {
+}
+body {
+    font-family: 'Inter', sans-serif;  
+    font-size: 1.6rem;
+    line-height: 1.5rem;
+    background: var(--background-theme);
+}
