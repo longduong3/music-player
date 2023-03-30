@@ -1,0 +1,25 @@
+.login-page{
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    top: 50;
+    transform: translateY( 50%);
+    a{
+        text-decoration: none;
+        margin-top: 50px;
+        padding: 20px 30px;
+        color: rgb(24, 25, 26);
+        border: 1px solid white;
+        border-radius: 20px;
+        background-color: aliceblue;
+        font-size: 1.4rem;
+        &:hover{
+            border: none;
+            background-color: rgb(65, 190, 65);
+            color:rgb(244, 251, 244);
+            transition: 0.5s;
+        }
+    }
+}

@@ -1,0 +1,35 @@
+.wrapper{
+    width: 80%;
+}
+.albumName-container{
+    width: 100%;
+    overflow: hidden;
+}
+
+.album-name{
+    width: 100%;
+    display: inline-block;
+    white-space: nowrap;
+    animation: album-name 12s linear infinite;
+    p{
+        font-size: 1.5rem;
+        font-weight: 600;
+    }
+}
+@keyframes album-name{
+    0%{
+        transform: translateX(0);
+    }
+    100%{
+        transform: translateX(-100%);
+    }
+}
+.releases{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+    font-size: 1rem;
+}

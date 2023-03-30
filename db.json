@@ -1,70 +1,76 @@
 {
-  "Music-db": 
-    {
-       "music": [
+  "songs": [
     {
       "id": 1,
       "name": "legend never die",
-      "img": "https://i.ytimg.com/vi/4Q46xYqUwZQ/maxresdefault.jpgtypicode",
+      "img": "http://volna.volkovdesign.com/img/covers/cover2.jpg",
       "artist": "legend"
     },
     {
       "name": "Dusk till dawn",
-      "img": "https://i.ytimg.com/vi/tt2k8PGm-TI/maxresdefault.jpg",
+      "img": "http://volna.volkovdesign.com/img/covers/cover3.jpg",
       "artist": "Zayn",
       "id": 2
     },
     {
       "name": "Dusk till dawn",
-      "img": "https://i.ytimg.com/vi/tt2k8PGm-TI/maxresdefault.jpg",
+      "img": "http://volna.volkovdesign.com/img/covers/cover1.jpg",
       "artist": "Zayn",
       "id": 3
     },
     {
       "name": "Dusk till dawn",
-      "img": "https://i.ytimg.com/vi/tt2k8PGm-TI/maxresdefault.jpg",
+      "img": "http://volna.volkovdesign.com/img/covers/cover4.jpg",
       "artist": "Zayn",
       "id": 5
     },
     {
       "name": "Dusk till dawn",
-      "img": "https://i.ytimg.com/vi/tt2k8PGm-TI/maxresdefault.jpg",
+      "img": "http://volna.volkovdesign.com/img/covers/cover5.jpg",
+      "artist": "Zayn",
+      "id": 6
+    },
+    {
+      "name": "Dusk till dawn",
+      "img": "http://volna.volkovdesign.com/img/covers/cover7.jpg",
       "artist": "Zayn",
       "id": 7
-    }
-  ],
-  "More": [
-    {
-      "id": 1,
-      "name": "legend never die",
-      "img": "https://i.ytimg.com/vi/4Q46xYqUwZQ/maxresdefault.jpgtypicode",
-      "artist": "legend"
     },
     {
       "name": "Dusk till dawn",
-      "img": "https://i.ytimg.com/vi/tt2k8PGm-TI/maxresdefault.jpg",
+      "img": "http://volna.volkovdesign.com/img/covers/cover8.jpg",
       "artist": "Zayn",
-      "id": 2
+      "id": 8
     },
     {
       "name": "Dusk till dawn",
-      "img": "https://i.ytimg.com/vi/tt2k8PGm-TI/maxresdefault.jpg",
+      "img": "http://volna.volkovdesign.com/img/covers/cover9.jpg",
       "artist": "Zayn",
-      "id": 3
+      "id": 9
     },
     {
       "name": "Dusk till dawn",
-      "img": "https://i.ytimg.com/vi/tt2k8PGm-TI/maxresdefault.jpg",
+      "img": "http://volna.volkovdesign.com/img/covers/cover10.jpg",
       "artist": "Zayn",
-      "id": 5
+      "id": 10
     },
     {
       "name": "Dusk till dawn",
-      "img": "https://i.ytimg.com/vi/tt2k8PGm-TI/maxresdefault.jpg",
+      "img": "http://volna.volkovdesign.com/img/covers/cover11.jpg",
       "artist": "Zayn",
-      "id": 7
+      "id": 11
+    },
+    {
+      "name": "Dusk till dawn",
+      "img": "http://volna.volkovdesign.com/img/covers/cover12.jpg",
+      "artist": "Zayn",
+      "id": 12
+    },
+    {
+      "name": "Dusk till dawn",
+      "img": "http://volna.volkovdesign.com/img/covers/cover6.jpg",
+      "artist": "Zayn",
+      "id": 4
     }
   ]
-    }
-  
 }

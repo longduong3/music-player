@@ -1,5 +1,6 @@
 .wrapper{
     display: flex;
+    flex-direction: column;
 
 }
 .Sidebar{
@@ -10,10 +11,10 @@
     color: var(--text-color);
     font-size: 1rem;
     padding-top: 70px;
+    height: 100%;
     width: 279px;
     border-right: 1px solid #222227;
-    height: 1000px;
-    z-index: 101;
+    z-index: 1000;
 }
 .content{
     display: flex;
@@ -21,8 +22,6 @@
     position: relative;
     margin-top: 70px;
     margin-left: 279px;
-    height: 2000px;
-    width: 100%;
     background-color: var(--background-theme);
 }
 .media{

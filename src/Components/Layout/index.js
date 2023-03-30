@@ -1,2 +1,2 @@
-export { default as DefaultLayout } from './DefaultLayout';
-export {default as Headerr} from './Headerr'
+export { default as DefaultLayout } from "./DefaultLayout";
+export { default as Headerr } from "./Headerr";

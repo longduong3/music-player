@@ -9,7 +9,7 @@
     background-color: var(--background-theme);
     color: var(--text-color);
     font-size: 1rem;
-    z-index: 1000;
+    z-index: 10001;
 }
 .logo {
     display: flex;
@@ -76,17 +76,17 @@
     display: flex;
     gap: 10px;
     height: 100%;
-    width: 100px;
+    width: 50px;
     position: absolute;
     margin-right: 100px;
     right: 0;
     align-items: center;
     cursor: pointer;
-    &:hover span{
-        color: #aaaabb;
-    }
-    &:hover .btn-siginin{
-        color: var(--primary);
+    img{
+        border: 1px solid;
+        border-radius: 50%;
+        height: 50px;
+        width: 100%;
     }
 }
 .clear, .loading{
@@ -107,4 +107,12 @@
     padding-top: 10px;
     padding-left: 20px;
 
+}
+.link-profile{
+    text-decoration: none;
+    color: #aaaabb;
+    cursor: pointer;
+    &:hover{
+    color: var(--primary);
+    }
 }

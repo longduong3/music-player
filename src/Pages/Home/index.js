@@ -1,10 +1,22 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import axios from "axios";
 import Carousels from "../../Components/Layout/Components/Carousel";
 import "bootstrap/dist/css/bootstrap.min.css";
 import classNames from "classnames/bind";
 import styles from "./home.module.scss";
-import { Col, Container, Row } from "reactstrap";
+import {
+  Col,
+  Container,
+  Row,
+  Pagination,
+  PaginationItem,
+  PaginationLink,
+} from "reactstrap";
+import Footer from "../../Components/Layout/Components/Footer";
+import APIKit from "../../spotify";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCirclePlay } from "@fortawesome/free-solid-svg-icons";
+import { Navigate, useNavigate } from "react-router-dom";
 
 const cx = classNames.bind(styles);
 
@@ -12,132 +24,79 @@ const cx = classNames.bind(styles);
 //   setStyle({});
 // };
 function Home() {
-  // const [song, setSong] = useState([]);
+  const [playlists, setPlaylists] = useState(null);
+
+  useEffect(() => {
+    APIKit.get("me/playlists").then(function (res) {
+      setPlaylists(res.data.items);
+      console.log("day la playlist", res.data);
+    });
+  }, []);
   // axios({
   //   method: "post",
   //   url: "http://localhost:3000/music",
   //   data: { song },
   // });
+  // useEffect(() => {
+  //   fetchData();
+  // }, [setListSongs]);
+  // const fetchData = async () => {
+  //   const listSongs = await axios.get("http://localhost:3000/songs");
+  //   setListSongs(listSongs.data);
+  // };
+  // const perSongs = () => {
+  //   listSongs.slice();
+  // };
+  const navigate = useNavigate();
+  const playPlaylist = (id) => {
+    navigate("/media", { state: { id: id } });
+  };
   return (
     <div className={cx("wrapper")}>
       <Carousels />
-      <div className={cx("text-content")}> New releases</div>
+      <div className={cx("text-content")}> Playlists</div>
       <div className={cx("music-content")}>
         <Container className={cx("container")} fluid>
           <Row className={cx("container-row")}>
-            <Col xs="2" className="container-col">
-              <div className={cx("content-song")}>
-                <img
-                  // onMouseEnter={handelStyle}
-                  src="https://static-cdn.jtvnw.net/ttv-boxart/26936-285x380.jpg"
-                />
-                <div className={cx("song-name")}>Space Melody</div>
-                <div className={cx("artist-name")}>
-                  VIZE & Alan Walker & Leony
+            {playlists?.map((playlist) => (
+              <Col key={playlist.id} xs="2" className="container-col">
+                <div className={cx("content-song")}>
+                  <img src={playlist.images[0].url} />
+                  <button
+                    className={cx("play-icon")}
+                    onClick={() => playPlaylist(playlist.id)}
+                  >
+                    <FontAwesomeIcon icon={faCirclePlay} />
+                  </button>
+                  <div className={cx("song-name")}>{playlist.name}</div>
                 </div>
-              </div>
-            </Col>
-            <Col xs="2" className="container-col">
-              <div className={cx("content-song")}>
-                <img src="https://static-cdn.jtvnw.net/ttv-boxart/26936-285x380.jpg" />
-                <div className={cx("song-name")}>Space Melody</div>
-                <div className={cx("artist-name")}>
-                  VIZE & Alan Walker & Leony
-                </div>
-              </div>
-            </Col>
-            <Col xs="2" className="container-col">
-              <div className={cx("content-song")}>
-                <img src="https://static-cdn.jtvnw.net/ttv-boxart/26936-285x380.jpg" />
-                <div className={cx("song-name")}>Space Melody</div>
-                <div className={cx("artist-name")}>
-                  VIZE & Alan Walker & Leony
-                </div>
-              </div>
-            </Col>
-            <Col xs="2" className="container-col">
-              <div className={cx("content-song")}>
-                <img src="https://static-cdn.jtvnw.net/ttv-boxart/26936-285x380.jpg" />
-                <div className={cx("song-name")}>Space Melody</div>
-                <div className={cx("artist-name")}>
-                  VIZE & Alan Walker & Leony
-                </div>
-              </div>
-            </Col>
-            <Col xs="2" className="container-col">
-              <div className={cx("content-song")}>
-                <img src="https://static-cdn.jtvnw.net/ttv-boxart/26936-285x380.jpg" />
-                <div className={cx("song-name")}>Space Melody</div>
-                <div className={cx("artist-name")}>
-                  VIZE & Alan Walker & Leony
-                </div>
-              </div>
-            </Col>
-            <Col xs="2" className="container-col">
-              <div className={cx("content-song")}>
-                <img src="https://static-cdn.jtvnw.net/ttv-boxart/26936-285x380.jpg" />
-                <div className={cx("song-name")}>Space Melody</div>
-                <div className={cx("artist-name")}>
-                  VIZE & Alan Walker & Leony
-                </div>
-              </div>
-            </Col>
-            <Col xs="2" className="container-col">
-              <div className={cx("content-song")}>
-                <img src="https://static-cdn.jtvnw.net/ttv-boxart/26936-285x380.jpg" />
-                <div className={cx("song-name")}>Space Melody</div>
-                <div className={cx("artist-name")}>
-                  VIZE & Alan Walker & Leony
-                </div>
-              </div>
-            </Col>
-            <Col xs="2" className="container-col">
-              <div className={cx("content-song")}>
-                <img src="https://static-cdn.jtvnw.net/ttv-boxart/26936-285x380.jpg" />
-                <div className={cx("song-name")}>Space Melody</div>
-                <div className={cx("artist-name")}>
-                  VIZE & Alan Walker & Leony
-                </div>
-              </div>
-            </Col>
-            <Col xs="2" className="container-col">
-              <div className={cx("content-song")}>
-                <img src="https://static-cdn.jtvnw.net/ttv-boxart/26936-285x380.jpg" />
-                <div className={cx("song-name")}>Space Melody</div>
-                <div className={cx("artist-name")}>
-                  VIZE & Alan Walker & Leony
-                </div>
-              </div>
-            </Col>
-            <Col xs="2" className="container-col">
-              <div className={cx("content-song")}>
-                <img src="https://static-cdn.jtvnw.net/ttv-boxart/26936-285x380.jpg" />
-                <div className={cx("song-name")}>Space Melody</div>
-                <div className={cx("artist-name")}>
-                  VIZE & Alan Walker & Leony
-                </div>
-              </div>
-            </Col>
-            <Col xs="2" className="container-col">
-              <div className={cx("content-song")}>
-                <img src="https://static-cdn.jtvnw.net/ttv-boxart/26936-285x380.jpg" />
-                <div className={cx("song-name")}>Space Melody</div>
-                <div className={cx("artist-name")}>
-                  VIZE & Alan Walker & Leony
-                </div>
-              </div>
-            </Col>
-            <Col xs="2" className="container-col">
-              <div className={cx("content-song")}>
-                <img src="https://static-cdn.jtvnw.net/ttv-boxart/26936-285x380.jpg" />
-                <div className={cx("song-name")}>Space Melody</div>
-                <div className={cx("artist-name")}>
-                  VIZE & Alan Walker & Leony
-                </div>
-              </div>
-            </Col>
+              </Col>
+            ))}
           </Row>
         </Container>
+        {/* <Pagination aria-label="Page navigation example" size="sm">
+          <PaginationItem>
+            <PaginationLink first href="#" />
+          </PaginationItem>
+          <PaginationItem>
+            <PaginationLink href="#" previous />
+          </PaginationItem>
+          <PaginationItem>
+            <PaginationLink href="#">1</PaginationLink>
+          </PaginationItem>
+          <PaginationItem>
+            <PaginationLink href="#">2</PaginationLink>
+          </PaginationItem>
+          <PaginationItem>
+            <PaginationLink href="#">3</PaginationLink>
+          </PaginationItem>
+          <PaginationItem>
+            <PaginationLink href="#" next />
+          </PaginationItem>
+          <PaginationItem>
+            <PaginationLink href="#" last />
+          </PaginationItem>
+        </Pagination> */}
       </div>
       <div className={cx("text-event")}>Upcoming event</div>
       <div className={cx("event-content")}>
@@ -145,22 +104,38 @@ function Home() {
           <Row className={cx("event-container")}>
             <Col xs="4">
               <div className={cx("content-event")}>
-                <img src="https://static-cdn.jtvnw.net/ttv-boxart/26936-285x380.jpg" />
+                <img src="https://i.pinimg.com/736x/4b/92/43/4b924325613089a96886f1f64ce6d657.jpg" />
               </div>
             </Col>
             <Col xs="4">
               <div className={cx("content-event")}>
-                <img src="https://static-cdn.jtvnw.net/ttv-boxart/26936-285x380.jpg" />
+                <img src="https://previews.123rf.com/images/singpentinkhappy/singpentinkhappy1901/singpentinkhappy190100002/117709340-vector-colorful-music-festival-for-event-banner-and-poster-colorful-geometric-abstract-background.jpg" />
               </div>
             </Col>
             <Col xs="4">
               <div className={cx("content-event")}>
-                <img src="https://static-cdn.jtvnw.net/ttv-boxart/26936-285x380.jpg" />
+                <img src="https://img.freepik.com/free-psd/urban-music-banner-template_23-2149078120.jpg" />
               </div>
             </Col>
           </Row>
         </Container>
       </div>
+      <div className={cx("text-event")}>Top artists</div>
+      <div className={cx("music-content")}>
+        <Container className={cx("container")} fluid>
+          <Row className={cx("container-row")}>
+            {/* {playlists?.map((playlist) => (
+              <Col key={playlist.id} xs="2" className="container-col">
+                <div className={cx("content-song")}>
+                  <img src={playlist.images[0].url} />
+                  <div className={cx("song-name")}>{playlist.name}</div>
+                </div>
+              </Col>
+            ))} */}
+          </Row>
+        </Container>
+      </div>
+      <div className={cx("songs-content")}></div>
     </div>
   );
 }

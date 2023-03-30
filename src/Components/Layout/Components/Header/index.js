@@ -7,22 +7,25 @@ import { faSearch, faSign, faSpinner } from "@fortawesome/free-solid-svg-icons";
 import images from "../../../../asset/img";
 import { faCircleXmark } from "@fortawesome/free-regular-svg-icons";
 import { DropdownA } from "../../../../Components/Dropdown";
+import { Link } from "react-router-dom";
+import { privateRoutes } from "../../../../routes";
+import Profile from "../../../../Pages/Profile";
+import apiClient from "../../../../spotify";
 
 const cx = classNames.bind(styles);
 function Header() {
   const [searchValue, setSearchValue] = useState("");
   const [result, setResult] = useState([]);
+  const [image, setImage] = useState(
+    "https://cdn-icons-png.flaticon.com/512/21/21104.png"
+  );
 
   const inputRef = useRef();
   useEffect(() => {
-    fetch(
-      "https://641ce1001a68dc9e4612d0e9.mockapi.io/Song?name=Miss Darrel Mills"
-    )
-      .then((res) => res.json)
-      .then((res) => {
-        console.log(res.data);
-      });
-  }, [searchValue]);
+    apiClient.get("me").then((res) => {
+      setImage(res.data.images[0].url);
+    });
+  }, []);
 
   return (
     <div className={cx("wrapper")}>
@@ -31,7 +34,11 @@ function Header() {
       </div>
       <div className={cx("header-nav")}>
         <ul>
-          <li>Profile</li>
+          <li>
+            <Link to={"/profile"} className={cx("link-profile")}>
+              Profile
+            </Link>
+          </li>
           <li>About</li>
           <li>Contacts</li>
         </ul>
@@ -41,7 +48,10 @@ function Header() {
           render={(attrs) => (
             <div className={cx("search-result")} tabIndex="-1" {...attrs}>
               <DropdownA>
-                <p className={cx("search-title")}>result</p>
+                <p className={cx("search-title")}></p>
+                {result.map((result) => (
+                  <div key={result.id}>{result.name}</div>
+                ))}
               </DropdownA>
             </div>
           )}
@@ -74,10 +84,7 @@ function Header() {
         </Tippy>
       </div>
       <div className={cx("action")}>
-        <span>Sign in</span>
-        <div className={cx("btn-siginin")}>
-          <FontAwesomeIcon icon={faSign} />
-        </div>
+        <img src={image} className={cx("user-img")} alt="user" />
       </div>
     </div>
   );

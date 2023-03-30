@@ -11,6 +11,9 @@
 
     }
     li{
+        display: flex;
+        align-items: center;
+        gap: 10px;
         margin: 50px 0;
         list-style: none;
         cursor: pointer;
@@ -18,4 +21,23 @@
             color: var(--primary);
         }
     }
+    a{
+        text-decoration: none;
+        color: #aaaabb;
+        cursor: pointer;
+        &:hover{
+        color: var(--primary);
+        }
+    }
+}
+.link-home{
+    text-decoration: none;
+    color: #aaaabb;
+    cursor: pointer;
+    &:hover{
+    color: var(--primary);
+    }
+}
+.play-icon{
+    font-size: 1.8rem;
 }

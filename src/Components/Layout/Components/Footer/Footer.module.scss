@@ -1,0 +1,36 @@
+.wrapper{
+    display: flex;
+    position: relative;
+    background-color:#222227 ;
+    z-index: 999;
+    padding: 20px 30px;
+    margin-left: 276px;
+    gap: 300px;
+}
+.footer-info{
+    width: 10%;
+    margin-right: 300px;
+    color: aliceblue;
+    font-size:0.8rem;
+    h2{
+        font-size: 1.6rem;
+    }
+    p{
+        color: rgb(170, 174, 177);
+    }
+}
+.footer-info1,.footer-info2,
+.footer-info3{
+    color: aliceblue;
+    font-size:0.8rem;
+    ul{
+        padding: 0;
+    }
+    li{
+        list-style: none;
+        color: rgb(170, 174, 177);
+    }
+    h2{
+        font-size: 1.2rem;
+    }
+}

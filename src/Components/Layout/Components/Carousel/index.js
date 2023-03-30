@@ -14,21 +14,21 @@ const cx = classNames.bind(styles);
 const items = [
   {
     id: 1,
-    altText: "Slide 1",
-    caption: "Slide 1",
-    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQfDfBFZ8cHiAc-OAiKyWmmqSX0iPrymBTIFA&usqp=CAU",
+    altText: "",
+    caption: "",
+    img: "https://img.freepik.com/free-vector/flat-design-music-festival-twitter-banner_23-2149074852.jpg",
   },
   {
     id: 2,
-    altText: "Slide 2",
-    caption: "Slide 2",
-    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQfDfBFZ8cHiAc-OAiKyWmmqSX0iPrymBTIFA&usqp=CAU",
+    altText: "",
+    caption: "",
+    img: "https://image.shutterstock.com/image-vector/music-banner-template-event-festival-260nw-1458913916.jpg",
   },
   {
     id: 3,
-    altText: "Slide 3",
-    caption: "Slide 3",
-    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQfDfBFZ8cHiAc-OAiKyWmmqSX0iPrymBTIFA&usqp=CAU",
+    altText: "",
+    caption: "",
+    img: "https://d1csarkz8obe9u.cloudfront.net/posterpreviews/edm-music-banner-design-template-a7a04b8182bac4dd9ea57f6b14e3601e_screen.jpg?ts=1599558499",
   },
 ];
 
