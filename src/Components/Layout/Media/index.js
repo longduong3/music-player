@@ -1,12 +1,11 @@
 import styles from "./Media.module.scss";
 import { useEffect, useState } from "react";
 import classNames from "classnames/bind";
-import APIKit from "../../../spotify";
 import apiClient from "../../../spotify";
 import { useLocation } from "react-router-dom";
 import Songcard from "../../Songcard";
 import Queue from "../../Queue";
-import Control from "../Control";
+import AudioPlayer from "../../Audio";
 
 const cx = classNames.bind(styles);
 function Media() {
@@ -20,46 +19,36 @@ function Media() {
   //   });
   // }, []);
   const location = useLocation();
+  console.log("this is tracks 1", currentTracks);
   useEffect(() => {
     if (location.state) {
       apiClient
         .get("playlists/" + location.state?.id + "/tracks")
         .then((res) => {
-          console.log(res.data.items);
           setTracks(res.data.items);
           setCurrentTracks(res.data.items[0].track);
+          console.log("data", res.data.items[0].track);
         });
     }
   }, [location.state]);
+  useEffect(() => {
+    setCurrentTracks(tracks[currentIndex]?.track);
+  }, [currentIndex, tracks]);
   return (
     <div className={cx("wrapper")}>
       <div className={cx("container")}>
         <div className={cx("left-player-body")}>
-          <Control currentTracks={currentTracks.album} />
+          <AudioPlayer
+            currentTracks={currentTracks}
+            currentIndex={currentIndex}
+            setCurrentIndex={setCurrentIndex}
+            total={tracks}
+          />
         </div>
         <div className={cx("right-player-body")}>
-          <Songcard album={currentTracks.album} />
+          <Songcard album={currentTracks?.album} />
           <Queue tracks={tracks} setCurrentIndex={setCurrentIndex} />
         </div>
-
-        {/* <div className={cx("image-songs")}>
-          <img src="https://images2.thanhnien.vn/Uploaded/minhnguyet/2022_11_21/nhac-viet2-7478.jpg" />
-        </div>
-        <div className={cx("name-song")}> A du a du</div>
-        <div className={cx("control-progress")}>
-          <input id="progress" className={cx("progress")} type="range" />
-        </div>
-        <div className={cx("control-play")}>
-          <button>
-            <FontAwesomeIcon icon={faForwardStep} />
-          </button>
-          <button>
-            <FontAwesomeIcon icon={faPlay} />
-          </button>
-          <button>
-            <FontAwesomeIcon icon={faBackwardStep} />
-          </button>
-        </div> */}
       </div>
     </div>
   );

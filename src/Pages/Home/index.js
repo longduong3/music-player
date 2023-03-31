@@ -1,22 +1,13 @@
 import { useState, useEffect } from "react";
-import axios from "axios";
 import Carousels from "../../Components/Layout/Components/Carousel";
 import "bootstrap/dist/css/bootstrap.min.css";
 import classNames from "classnames/bind";
 import styles from "./home.module.scss";
-import {
-  Col,
-  Container,
-  Row,
-  Pagination,
-  PaginationItem,
-  PaginationLink,
-} from "reactstrap";
-import Footer from "../../Components/Layout/Components/Footer";
+import { Col, Container, Row } from "reactstrap";
 import APIKit from "../../spotify";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCirclePlay } from "@fortawesome/free-solid-svg-icons";
-import { Navigate, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const cx = classNames.bind(styles);
 
@@ -32,21 +23,6 @@ function Home() {
       console.log("day la playlist", res.data);
     });
   }, []);
-  // axios({
-  //   method: "post",
-  //   url: "http://localhost:3000/music",
-  //   data: { song },
-  // });
-  // useEffect(() => {
-  //   fetchData();
-  // }, [setListSongs]);
-  // const fetchData = async () => {
-  //   const listSongs = await axios.get("http://localhost:3000/songs");
-  //   setListSongs(listSongs.data);
-  // };
-  // const perSongs = () => {
-  //   listSongs.slice();
-  // };
   const navigate = useNavigate();
   const playPlaylist = (id) => {
     navigate("/media", { state: { id: id } });
@@ -61,7 +37,7 @@ function Home() {
             {playlists?.map((playlist) => (
               <Col key={playlist.id} xs="2" className="container-col">
                 <div className={cx("content-song")}>
-                  <img src={playlist.images[0].url} />
+                  <img src={playlist.images[0].url} alt="none" />
                   <button
                     className={cx("play-icon")}
                     onClick={() => playPlaylist(playlist.id)}
@@ -74,29 +50,6 @@ function Home() {
             ))}
           </Row>
         </Container>
-        {/* <Pagination aria-label="Page navigation example" size="sm">
-          <PaginationItem>
-            <PaginationLink first href="#" />
-          </PaginationItem>
-          <PaginationItem>
-            <PaginationLink href="#" previous />
-          </PaginationItem>
-          <PaginationItem>
-            <PaginationLink href="#">1</PaginationLink>
-          </PaginationItem>
-          <PaginationItem>
-            <PaginationLink href="#">2</PaginationLink>
-          </PaginationItem>
-          <PaginationItem>
-            <PaginationLink href="#">3</PaginationLink>
-          </PaginationItem>
-          <PaginationItem>
-            <PaginationLink href="#" next />
-          </PaginationItem>
-          <PaginationItem>
-            <PaginationLink href="#" last />
-          </PaginationItem>
-        </Pagination> */}
       </div>
       <div className={cx("text-event")}>Upcoming event</div>
       <div className={cx("event-content")}>
@@ -104,17 +57,26 @@ function Home() {
           <Row className={cx("event-container")}>
             <Col xs="4">
               <div className={cx("content-event")}>
-                <img src="https://i.pinimg.com/736x/4b/92/43/4b924325613089a96886f1f64ce6d657.jpg" />
+                <img
+                  src="https://i.pinimg.com/736x/4b/92/43/4b924325613089a96886f1f64ce6d657.jpg"
+                  alt="none"
+                />
               </div>
             </Col>
             <Col xs="4">
               <div className={cx("content-event")}>
-                <img src="https://previews.123rf.com/images/singpentinkhappy/singpentinkhappy1901/singpentinkhappy190100002/117709340-vector-colorful-music-festival-for-event-banner-and-poster-colorful-geometric-abstract-background.jpg" />
+                <img
+                  src="https://previews.123rf.com/images/singpentinkhappy/singpentinkhappy1901/singpentinkhappy190100002/117709340-vector-colorful-music-festival-for-event-banner-and-poster-colorful-geometric-abstract-background.jpg"
+                  alt="none"
+                />
               </div>
             </Col>
             <Col xs="4">
               <div className={cx("content-event")}>
-                <img src="https://img.freepik.com/free-psd/urban-music-banner-template_23-2149078120.jpg" />
+                <img
+                  src="https://img.freepik.com/free-psd/urban-music-banner-template_23-2149078120.jpg"
+                  alt="none"
+                />
               </div>
             </Col>
           </Row>

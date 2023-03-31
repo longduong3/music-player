@@ -1,6 +1,5 @@
 import styles from "./Sidebar.module.scss";
 import classNames from "classnames/bind";
-import Media from "../../Media";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -25,7 +24,9 @@ function Sidebar() {
           </li>
           <li>
             <FontAwesomeIcon icon={faCrown} />
-            <a href="#">Artist</a>
+            <Link to={"/artists"} className={cx("link-home")}>
+              Artists
+            </Link>
           </li>
           <li>
             <FontAwesomeIcon className={cx("play-icon")} icon={faPlay} />
