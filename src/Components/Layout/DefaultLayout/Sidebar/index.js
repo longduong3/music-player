@@ -24,8 +24,8 @@ function Sidebar() {
           </li>
           <li>
             <FontAwesomeIcon icon={faCrown} />
-            <Link to={"/artists"} className={cx("link-home")}>
-              Artists
+            <Link to={"/albums"} className={cx("link-home")}>
+              Albums
             </Link>
           </li>
           <li>
@@ -36,7 +36,9 @@ function Sidebar() {
           </li>
           <li>
             <FontAwesomeIcon icon={faSquareRss} />
-            <a href="#">News</a>
+            <Link to={"/library"} className={cx("link-media")}>
+              Library
+            </Link>
           </li>
           <li>
             <FontAwesomeIcon icon={faIcons} />

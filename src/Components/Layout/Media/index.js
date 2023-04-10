@@ -6,6 +6,7 @@ import { useLocation } from "react-router-dom";
 import Songcard from "../../Songcard";
 import Queue from "../../Queue";
 import AudioPlayer from "../../Audio";
+import ListAudio from "../../ListAudio";
 
 const cx = classNames.bind(styles);
 function Media() {
@@ -44,6 +45,7 @@ function Media() {
             setCurrentIndex={setCurrentIndex}
             total={tracks}
           />
+          <ListAudio artistID={currentTracks?.album?.artists[0]?.id} />
         </div>
         <div className={cx("right-player-body")}>
           <Songcard album={currentTracks?.album} />

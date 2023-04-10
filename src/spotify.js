@@ -6,6 +6,9 @@ const scopes = [
   "user-library-read",
   "playlist-read-private",
   "user-read-currently-playing",
+  "user-top-read",
+  "user-follow-read",
+  "user-read-private",
 ];
 
 export const loginEndpoint = `${authEndpoint}client_id=${clientId}&redirect_uri=${redirectUri}&scope=${scopes.join(

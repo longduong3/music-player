@@ -1,0 +1,22 @@
+.wrapper{
+    display: flex;
+    height: 30%;
+    cursor: pointer;
+    img{
+        height: 60px;
+        width: 60px;
+        border-radius: 20px;
+    }
+    &:hover{
+        scale: 1.1;
+    }
+}
+.entry-right-body{
+    display: flex;
+    flex-direction: column;
+    margin: 5px 10px;
+    font-size: 0.8rem;
+    p{
+        margin: 0;
+    }
+}

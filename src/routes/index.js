@@ -1,7 +1,8 @@
 // import { Headerr } from "../Components/Layout/Headerr";
 
-import Artists from "../Components/Artists";
+import Albums from "../Components/Albums";
 import Media from "../Components/Layout/Media";
+import Library from "../Pages/Library";
 import Home from "../Pages/Home";
 import Profile from "../Pages/Profile";
 
@@ -19,8 +20,12 @@ const publicRoutes = [
     component: Media,
   },
   {
-    path: "/artists",
-    component: Artists,
+    path: "/albums",
+    component: Albums,
+  },
+  {
+    path: "/library",
+    component: Library,
   },
 ];
 const privateRoutes = [];

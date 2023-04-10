@@ -6,16 +6,17 @@ import styles from "./home.module.scss";
 import { Col, Container, Row } from "reactstrap";
 import APIKit from "../../spotify";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCirclePlay } from "@fortawesome/free-solid-svg-icons";
+import {
+  faArrowLeft,
+  faArrowRight,
+  faCirclePlay,
+} from "@fortawesome/free-solid-svg-icons";
 import { useNavigate } from "react-router-dom";
 
 const cx = classNames.bind(styles);
-
-// const handelStyle = () => {
-//   setStyle({});
-// };
 function Home() {
   const [playlists, setPlaylists] = useState(null);
+  const [albums, setAlbums] = useState(null);
 
   useEffect(() => {
     APIKit.get("me/playlists").then(function (res) {
@@ -23,9 +24,25 @@ function Home() {
       console.log("day la playlist", res.data);
     });
   }, []);
+  useEffect(() => {
+    APIKit.get("me/albums").then(function (res) {
+      setAlbums(res.data.items);
+      console.log("day la albums", res.data.items);
+    });
+  }, []);
+  useEffect(() => {
+    APIKit.get("me/following").then(function (res) {
+      // setPlaylists(res.data.items);
+      console.log("day la following", res);
+    });
+  }, []);
+
   const navigate = useNavigate();
   const playPlaylist = (id) => {
     navigate("/media", { state: { id: id } });
+  };
+  const getAlbums = (id) => {
+    navigate("/albums", { state: { id: id } });
   };
   return (
     <div className={cx("wrapper")}>
@@ -51,6 +68,14 @@ function Home() {
           </Row>
         </Container>
       </div>
+      {/* <div className={cx("btn-effect")}>
+        <button>
+          <FontAwesomeIcon icon={faArrowLeft} />
+        </button>
+        <button>
+          <FontAwesomeIcon icon={faArrowRight} />
+        </button>
+      </div> */}
       <div className={cx("text-event")}>Upcoming event</div>
       <div className={cx("event-content")}>
         <Container className={cx("container")} fluid>
@@ -82,18 +107,24 @@ function Home() {
           </Row>
         </Container>
       </div>
-      <div className={cx("text-event")}>Top artists</div>
+      <div className={cx("text-albums")}>Albums</div>
       <div className={cx("music-content")}>
         <Container className={cx("container")} fluid>
           <Row className={cx("container-row")}>
-            {/* {playlists?.map((playlist) => (
-              <Col key={playlist.id} xs="2" className="container-col">
+            {albums?.map((album) => (
+              <Col key={album?.album?.id} xs="2" className="container-col">
                 <div className={cx("content-song")}>
-                  <img src={playlist.images[0].url} />
-                  <div className={cx("song-name")}>{playlist.name}</div>
+                  <img src={album?.album?.images[0]?.url} alt="none" />
+                  <button
+                    className={cx("play-icon")}
+                    onClick={() => getAlbums(album?.id)}
+                  >
+                    <FontAwesomeIcon icon={faCirclePlay} />
+                  </button>
+                  <div className={cx("song-name")}>{album?.name}</div>
                 </div>
               </Col>
-            ))} */}
+            ))}
           </Row>
         </Container>
       </div>

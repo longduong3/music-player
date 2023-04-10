@@ -1,0 +1,41 @@
+.wrapper{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background-color: var(--background-theme);
+    height: 1000px;
+}
+.choose{
+    padding: 20px 0;
+    color: aliceblue;
+    ul{
+        display: flex;
+        gap: 50px;
+    }
+    li{
+        cursor: pointer;
+        list-style: none;
+    }
+}
+.content{
+    display: flex;
+    width: 100%;
+    gap: 30px;
+    margin: 20px 30px;
+    color: aliceblue;
+    overflow-x: scroll;
+    img{
+        border-radius: 30px;
+    }
+}
+.children{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    p{
+        padding: 20px 0;
+        align-items: center;
+    }
+}
